@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    function calculateAll() {
+        // Get the purchase amount and convert it to a number
+        var purchaseAmount = parseFloat(document.getElementById("purchaseamount").value);
+
+        // Get the tax rate string ("8.25%")
+        var taxString = document.getElementById("tax").value;
+        
+        // Remove the '%' sign, convert to a number, and then divide by 100 to get the decimal
+        var taxRate = parseFloat(taxString.replace('%', '')) / 100; // This will be 0.0825
+
+            // Calculate sales tax
+            var salesTax = purchaseAmount * taxRate;
+            
+            // Calculate the total amount
+            var totalAmount = purchaseAmount + salesTax;
+
+            // Display the results, formatted to 2 decimal places for currency
+            document.getElementById("salestax").value = salesTax.toFixed(2);
+            document.getElementById("totalamount").value = totalAmount.toFixed(2);
+        }
+    
+</script>
+</head>
+<body>
+
+    <h2>Sales Tax Calculator</h2>
+
+    <form>
+        <label for="purchaseamount">Purchase Amount:</label><br>
+        <input type="text" id="purchaseamount" name="purchaseamount"><br>
+
+        <label for="tax">Sales Tax Percent:</label><br>
+        <input type="text" id="tax" name="tax" value="8.25%" disabled><br>
+
+        <label for="salestax">Sales Tax Amount:</label><br>
+        <input type="text" id="salestax" name="salestax" disabled><br>
+        
+        <label for="totalamount">Total Purchase Amount:</label><br>
+        <input type="text" id="totalamount" name="totalamount" disabled><br><br>
+        
+        <input type="button" value="Calculate Total" onclick="calculateAll()">
+    </form>
+
+</body>
+</html>
