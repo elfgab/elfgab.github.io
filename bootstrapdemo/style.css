@@ -31,5 +31,20 @@ body {
     background-color: black;
     color: white;
     margin: 0px;
-    
+
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+    width: 200px;
+    height: 200px;
+} 
+
+table {
+    color: white;
+
+}
+
+h3 {
+    color: white;
 }
