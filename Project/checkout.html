@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Check Out</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="item.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img id="logo" src="images/logo1.png" alt="logo">
+        </a>
+        <h1 id="title">Awesome Hospital</h1>
+    </header>
+    <nav>
+        <ul id="links">
+            <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="medicalsupply.html">Medical Supply</a></li>
+            <li><a href="checkout.html">Check Out</a></li>
+            <li><a href="survey.html">Survey</a></li>
+            <li><a href="contactus.html">Contact Us</a></li> 
+        </ul>
+    </nav>
+
+    <section class="checkout-section">
+        <div class="jumbotron text-center banner">
+            <h1>Shopping Cart</h1>
+            <p>Review and checkout your items</p>
+        </div>
+
+        <div class="container checkout-container">
+            <div id="cart"></div>
+            <div id="total"></div>
+            <div class="button-group-checkout">
+                <input type="button" class="btn btn-danger" value="Clear Cart" onclick="sessionStorage.clear(); displayCart(); updateCheckout();">
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
