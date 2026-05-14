@@ -247,6 +247,7 @@ section {
   padding: 2rem;
   opacity: 0;
   transition: opacity 0.4s ease;
+  pointer-events: none; /* Prevents hidden overlay from blocking taps */
 }
 
 .testimonial-card:hover .testimonial-overlay,
@@ -254,6 +255,7 @@ section {
 .testimonial-card:focus .testimonial-overlay,
 .testimonial-card.is-active .testimonial-overlay {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .testimonial-overlay p {

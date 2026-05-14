@@ -19,10 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Force iOS Safari to respect CSS :hover states
+    document.body.addEventListener('touchstart', function() {}, {passive: true});
+
     // iPad / Mobile Touch Fix for Testimonial Cards
     const testimonialCards = document.querySelectorAll('.testimonial-card');
     testimonialCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function(e) {
             // Check if this card is already active
             const isActive = this.classList.contains('is-active');
             
