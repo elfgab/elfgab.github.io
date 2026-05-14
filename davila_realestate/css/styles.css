@@ -207,9 +207,13 @@ section {
   transition: transform 0.3s ease;
   overflow: hidden;
   height: 400px;
+  cursor: pointer; /* Fixes iOS Safari hover issue */
+  -webkit-tap-highlight-color: transparent;
 }
 
-.testimonial-card:hover {
+.testimonial-card:hover,
+.testimonial-card:active,
+.testimonial-card:focus {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
@@ -221,7 +225,9 @@ section {
   transition: transform 0.5s ease;
 }
 
-.testimonial-card:hover .testimonial-img {
+.testimonial-card:hover .testimonial-img,
+.testimonial-card:active .testimonial-img,
+.testimonial-card:focus .testimonial-img {
   transform: scale(1.05);
 }
 
@@ -241,7 +247,9 @@ section {
   transition: opacity 0.4s ease;
 }
 
-.testimonial-card:hover .testimonial-overlay {
+.testimonial-card:hover .testimonial-overlay,
+.testimonial-card:active .testimonial-overlay,
+.testimonial-card:focus .testimonial-overlay {
   opacity: 1;
 }
 
