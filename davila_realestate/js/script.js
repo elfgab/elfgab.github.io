@@ -18,4 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
         });
     }
+
+    // iPad / Mobile Touch Fix for Testimonial Cards
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    testimonialCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Check if this card is already active
+            const isActive = this.classList.contains('is-active');
+            
+            // Remove active class from all cards first
+            testimonialCards.forEach(c => c.classList.remove('is-active'));
+            
+            // If it wasn't active, make it active
+            if (!isActive) {
+                this.classList.add('is-active');
+            }
+        });
+    });
 });

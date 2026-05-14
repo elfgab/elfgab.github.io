@@ -213,7 +213,8 @@ section {
 
 .testimonial-card:hover,
 .testimonial-card:active,
-.testimonial-card:focus {
+.testimonial-card:focus,
+.testimonial-card.is-active {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
@@ -227,7 +228,8 @@ section {
 
 .testimonial-card:hover .testimonial-img,
 .testimonial-card:active .testimonial-img,
-.testimonial-card:focus .testimonial-img {
+.testimonial-card:focus .testimonial-img,
+.testimonial-card.is-active .testimonial-img {
   transform: scale(1.05);
 }
 
@@ -249,7 +251,8 @@ section {
 
 .testimonial-card:hover .testimonial-overlay,
 .testimonial-card:active .testimonial-overlay,
-.testimonial-card:focus .testimonial-overlay {
+.testimonial-card:focus .testimonial-overlay,
+.testimonial-card.is-active .testimonial-overlay {
   opacity: 1;
 }
 
