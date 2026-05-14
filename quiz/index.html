@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Gaming Quiz</title>
+    </head>
+    <body>
+        <header>
+            <a href="index.html">
+                <img id="logo" src="images/logo.jpg">
+                
+            </a>
+            <h1 id="title">Gaming Quiz</h1>
+        </header>
+        <section>
+            <h1>What's your Gaming style </h1>
+
+        <form action="action_page.php" method="GET" target="_blank">
+            <label for="firstName">First Name:</label><br>
+            <input type="text" id="firstName" name="firstName"><br>
+
+            <label for="lastName">Last Name:</label><br>
+            <input type="text" id="LastName" name="lastName" ><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+
+
+            <!---Platform Radio buttons-->
+            <h4>Platform</h4>
+            <input type="radio" id="nintendo" name="platform" value="nintendo"> 
+            <label for="nintendo">Nintendo</label>
+
+            <input type="radio" id="xbox" name="platform" value="xbox"> 
+            <label for="xbox">Xbox</label><br>
+            
+            <input type="radio" id="playstation" name="platform" value="playstation"> 
+            <label for="playstation">PlayStation</label>
+
+            <input type="radio" id="pc" name="platform" value="pc"> 
+            <label for="pc">PC</label>
+            <hr>
+            <!----Age Radio Buttons-->
+
+            <h5>AGE</h5>
+            
+            <input type="radio" id="19-23" name="age" value="19-23"> 
+            <label for="19-23">19-23</label>
+
+            <input type="radio" id="24-30" name="age" value="24-30"> 
+            <label for="24-30">24-30</label><br>
+
+            <input type="radio" id="31-35" name="age" value="31-35"> 
+            <label for="31-35">31-35</label>
+
+            <input type="radio" id="36-40+" name="age" value="36-40+"> 
+            <label for="36-40+">36-40+</label>
+            <hr>
+
+            <!---CHECKBOXES FOR COURSES---->
+            <fieldset>
+                <legend>Games played</legend>
+                <input type="checkbox" id="callofduty" name="callofduty" value="callofduty">
+                <label for="callofduty">Call of Duty</label>
+
+                <input type="checkbox" id="fortnite" name="fortnite" value="fortnite">
+                <label for="fortnite">Fortnite</label><br>
+
+                <input type="checkbox" id="rocketlegue" name="rocketlegue" value="rocketlegue">
+                <label for="rocketlegue">Rocket Legue</label> 
+
+                <input type="checkbox" id="madden" name="madden" value="Madden">
+                <label for="madden">Madden</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Snacks</legend>
+                <input type="checkbox" id="chips" name="chips" value="chips">
+                <label for="chips">Chips</label> 
+                
+                <input type="checkbox" id="energydrinks" name="energydrinks" value="energydrinks">
+                <label for="energydrinks">Energy Drinks</label> <br>
+                
+                <input type="checkbox" id="soda" name="soda" value="soda">
+                <label for="soda">Soda</label> 
+            </fieldset>
+            <label for="question">Type your question!</label><br>
+            <textarea name="question" id="question" rows="10" cols="30"></textarea><br>
+
+
+            <input type="submit" value="click to submit"> <input type="reset" value="reset form">
+
+
+
+        </form>    
+         
+        </section>
+    </body>
+</html>

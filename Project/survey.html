@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Survey</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="item.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img id="logo" src="images/logo1.png" alt="logo">
+        </a>
+        <h1 id="title">Awesome Hospital</h1>
+    </header>
+    <nav>
+        <ul id="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="staff.html">Staff</a></li>
+            <li><a href="medicalsupply.html">Medical Supply</a></li>
+            <li><a href="checkout.html">Check Out</a></li>
+            <li><a href="survey.html" class="active" aria-current="page">Survey</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="survey-section">
+        <div class="survey-container">
+            <h1>Patient Feedback Survey</h1>
+            <p class="survey-subtitle">Your feedback helps us improve our services. Thank you for taking the time to complete this survey.</p>
+
+            <form id="surveyForm" action="action_page.php" method="GET">
+                <!-- Personal Information Section -->
+                <fieldset class="form-fieldset">
+                    <legend>Personal Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </fieldset>
+
+                <!-- Gender Section -->
+                <fieldset class="form-fieldset">
+                    <legend>Gender</legend>
+                    
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="other" name="gender" value="other">
+                            <label for="other">Other</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Classification Section -->
+                <fieldset class="form-fieldset">
+                    <legend>Reason for Visit</legend>
+                    
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="pediatrician" name="classification" value="pediatrician" required>
+                            <label for="pediatrician">Pediatrician</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="surgery" name="classification" value="surgery">
+                            <label for="surgery">Surgery</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="checkup" name="classification" value="checkup">
+                            <label for="checkup">Check Up</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="lab" name="classification" value="lab">
+                            <label for="lab">Lab</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Rating Section -->
+                <fieldset class="form-fieldset">
+                    <legend>Rate Your Last Visit</legend>
+                    
+                    <div class="rating-question">
+                        <label class="rating-label">Cleanliness:</label>
+                        <div class="rating-group" role="radiogroup">
+                            <input type="radio" id="clean-1" name="cleanliness" value="1" required>
+                            <label for="clean-1" class="rating-option">1</label>
+                            <input type="radio" id="clean-2" name="cleanliness" value="2">
+                            <label for="clean-2" class="rating-option">2</label>
+                            <input type="radio" id="clean-3" name="cleanliness" value="3">
+                            <label for="clean-3" class="rating-option">3</label>
+                            <input type="radio" id="clean-4" name="cleanliness" value="4">
+                            <label for="clean-4" class="rating-option">4</label>
+                            <input type="radio" id="clean-5" name="cleanliness" value="5">
+                            <label for="clean-5" class="rating-option">5</label>
+                        </div>
+                    </div>
+
+                    <div class="rating-question">
+                        <label class="rating-label">Staff Professionalism:</label>
+                        <div class="rating-group" role="radiogroup">
+                            <input type="radio" id="prof-1" name="professionalism" value="1" required>
+                            <label for="prof-1" class="rating-option">1</label>
+                            <input type="radio" id="prof-2" name="professionalism" value="2">
+                            <label for="prof-2" class="rating-option">2</label>
+                            <input type="radio" id="prof-3" name="professionalism" value="3">
+                            <label for="prof-3" class="rating-option">3</label>
+                            <input type="radio" id="prof-4" name="professionalism" value="4">
+                            <label for="prof-4" class="rating-option">4</label>
+                            <input type="radio" id="prof-5" name="professionalism" value="5">
+                            <label for="prof-5" class="rating-option">5</label>
+                        </div>
+                    </div>
+
+                    <div class="rating-question">
+                        <label class="rating-label">Wait Time:</label>
+                        <div class="rating-group" role="radiogroup">
+                            <input type="radio" id="wait-1" name="waitTime" value="1" required>
+                            <label for="wait-1" class="rating-option">1</label>
+                            <input type="radio" id="wait-2" name="waitTime" value="2">
+                            <label for="wait-2" class="rating-option">2</label>
+                            <input type="radio" id="wait-3" name="waitTime" value="3">
+                            <label for="wait-3" class="rating-option">3</label>
+                            <input type="radio" id="wait-4" name="waitTime" value="4">
+                            <label for="wait-4" class="rating-option">4</label>
+                            <input type="radio" id="wait-5" name="waitTime" value="5">
+                            <label for="wait-5" class="rating-option">5</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Comments Section -->
+                <fieldset class="form-fieldset">
+                    <legend>Additional Comments</legend>
+                    
+                    <div class="form-group">
+                        <label for="question">Any recommendations or comments?</label>
+                        <textarea name="question" id="question" rows="6" placeholder="Please share your feedback here..."></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Buttons -->
+                <div class="button-group-survey">
+                    <input type="submit" class="btn-submit" value="Submit Survey">
+                    <input type="reset" class="btn-reset" value="Clear Form">
+                </div>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
