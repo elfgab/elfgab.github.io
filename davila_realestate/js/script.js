@@ -20,7 +20,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Removed mock form submission alert to allow native Formspree POST
+    // Handle Formspree submission without redirecting
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Stop the default redirect
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    alert('Thank you for reaching out! Nancy will be in contact with you shortly.');
+                    contactForm.reset();
+                } else {
+                    alert('Oops! There was a problem submitting your form. Please try again.');
+                }
+            } catch (error) {
+                alert('Oops! There was a network error. Please try again.');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
 
     // Force iOS Safari to respect CSS :hover states
     document.body.addEventListener('touchstart', function() {}, {passive: true});
