@@ -10,6 +10,8 @@
     <meta property="og:image" content="assets/hero_background.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
+    <!-- Preload hero image for faster LCP -->
+    <link rel="preload" as="image" href="assets/hero_background.jpg">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
@@ -31,7 +33,7 @@
             <h2 class="section-title">Client Testimonials</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <img src="assets/Denise C. Lopez.jpg" alt="Denise C. Lopez" class="testimonial-img" loading="lazy">
+                    <img src="assets/Denise C. Lopez.jpg" alt="Denise C. Lopez" class="testimonial-img">
                     <div class="testimonial-overlay">
                         <p>"Nancy has proven herself as an A+ realtor twice for us! ... amazing outcomes for both of our real estate transactions!"</p>
                         <div class="testimonial-author">— Denise C. Lopez</div>
