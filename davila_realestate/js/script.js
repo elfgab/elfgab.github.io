@@ -4,8 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        const toggleMenu = () => {
+            const isActive = navLinks.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isActive);
+        };
+
+        hamburger.addEventListener('click', toggleMenu);
+        
+        // Accessibility: Allow toggling menu with Enter or Space key
+        hamburger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
         });
     }
 
@@ -22,20 +33,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Force iOS Safari to respect CSS :hover states
     document.body.addEventListener('touchstart', function() {}, {passive: true});
 
-    // iPad / Mobile Touch Fix for Testimonial Cards
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    testimonialCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            // Check if this card is already active
-            const isActive = this.classList.contains('is-active');
+    // iPad / Mobile Touch Fix for Testimonial Cards using Event Delegation (Performance Optimization)
+    const testimonialsGrid = document.querySelector('.testimonials-grid');
+    if (testimonialsGrid) {
+        testimonialsGrid.addEventListener('click', function(e) {
+            const card = e.target.closest('.testimonial-card');
+            if (!card) return; // Ignore clicks outside cards
+
+            const isActive = card.classList.contains('is-active');
             
             // Remove active class from all cards first
-            testimonialCards.forEach(c => c.classList.remove('is-active'));
+            const allCards = testimonialsGrid.querySelectorAll('.testimonial-card');
+            allCards.forEach(c => c.classList.remove('is-active'));
             
             // If it wasn't active, make it active
             if (!isActive) {
-                this.classList.add('is-active');
+                card.classList.add('is-active');
             }
         });
-    });
+    }
 });

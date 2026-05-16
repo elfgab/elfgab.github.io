@@ -204,7 +204,9 @@ section {
   background-color: var(--color-surface);
   border-radius: 8px;
   border-top: 3px solid var(--color-gold);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
   overflow: hidden;
   height: 400px;
   cursor: pointer; /* Fixes iOS Safari hover issue */
@@ -224,6 +226,7 @@ section {
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  will-change: transform;
 }
 
 .testimonial-card:hover .testimonial-img,
