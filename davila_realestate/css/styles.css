@@ -151,7 +151,7 @@ section {
 .hero {
   height: 100vh;
   padding-top: 0;
-  background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.9)), url('../assets/hero_background.png') center/cover no-repeat;
+  background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.9)), url('../assets/hero_background.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
