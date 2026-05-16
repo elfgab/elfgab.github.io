@@ -99,6 +99,12 @@ header {
   letter-spacing: 0.5px;
 }
 
+.nav-links a.current-page {
+  color: var(--color-gold);
+  border-bottom: 2px solid var(--color-gold);
+  padding-bottom: 0.2rem;
+}
+
 .hamburger {
   display: none;
   cursor: pointer;

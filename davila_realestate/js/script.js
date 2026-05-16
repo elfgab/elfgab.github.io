@@ -52,4 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Highlight current page in nav
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+            link.classList.add('current-page');
+        }
+    });
 });
