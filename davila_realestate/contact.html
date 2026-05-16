@@ -33,7 +33,10 @@
         <section id="contact">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-container">
-                <form id="contactForm">
+                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
+                    <!-- Formspree Honeypot Trap (Invisible to humans, catches bots) -->
+                    <input type="text" name="_gotcha" style="display:none" />
+                    
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>

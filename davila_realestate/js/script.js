@@ -20,15 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Optional form submission alert for contact.html
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for reaching out! Nancy will be in contact with you shortly.');
-            contactForm.reset();
-        });
-    }
+    // Removed mock form submission alert to allow native Formspree POST
 
     // Force iOS Safari to respect CSS :hover states
     document.body.addEventListener('touchstart', function() {}, {passive: true});
