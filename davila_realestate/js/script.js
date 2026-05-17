@@ -18,6 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 toggleMenu();
             }
         });
+
+        // Fix for mobile back button (bfcache keeping menu open)
+        window.addEventListener('pageshow', (e) => {
+            if (e.persisted) {
+                navLinks.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
     }
 
     // Handle Formspree submission without redirecting
