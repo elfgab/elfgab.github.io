@@ -87,10 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Highlight current page in nav
-    const currentPage = window.location.pathname.split("/").pop();
+    const pathname = window.location.pathname;
+    let currentPage = pathname.split("/").pop().replace('.html', '');
+    if (currentPage === '') currentPage = 'index'; // Handle root URL
+
     document.querySelectorAll('.nav-links a').forEach(link => {
-        const linkHref = link.getAttribute('href');
-        if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+        const linkHref = link.getAttribute('href').replace('.html', '');
+        if (linkHref === currentPage) {
             link.classList.add('current-page');
         }
     });
